@@ -3,12 +3,20 @@
     border-bottom: 1px dotted #666;
     padding:10px 0;
 }
-.Icon{
-    border:2px solid#ccc;
+.sidebarIcon{
+    border:2px solid #666;
     margin:5px;
     border-radius: 3px 3px;
 }
-.Icon:hover{
+.sidebarIcon:hover{
     border:2px solid #43DDE0;
     background-color: #43DDE0;
+}
+.pageIcon{
+    border:2px solid #666;    
+    border-radius: 50% 50%;
+    margin:10px;
+}
+.pageIcon:hover{
+    border:2px solid #43DDE0;
 }

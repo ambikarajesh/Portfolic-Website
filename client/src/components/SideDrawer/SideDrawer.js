@@ -9,7 +9,9 @@ const styles = {
     paper: {
         background: 'rgba(20, 41, 51,0.3)',
         color:'#fff',
-        padding:'10px'
+        padding:'10px',
+        fontFamily: "'Fresca', sans-serif",
+        letterSpacing:1,
     },
     active: {
         color: "#43DDE0"
@@ -21,9 +23,9 @@ class SideDrawer extends React.Component{
     const { classes } = this.props;
     
     return (
-        <div>            
+        <div style = {{}}>            
             <Drawer classes={{paper:classes.paper}} open={this.props.open} onClose={()=> this.props.onclose(false)}>
-                <AuthorImage/>
+                <AuthorImage height='100px' width='100px'/>
                 <List component='nav'>
                     <ListItem button  selected={this.props.active ==='home' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('home')}> 
                         HOME
@@ -38,7 +40,7 @@ class SideDrawer extends React.Component{
                         CONTACT
                     </ListItem>
                 </List>
-                <SocialMediaIcons/>
+                <SocialMediaIcons sidebar = {true}/>
                 <div>
                     <p style ={{color:'#ccc', fontStyle:'italic', fontSize:'13px'}}>@copy 2019 by <span style ={{color:'#43DDE0'}}>Ambika</span></p>
                 </div>

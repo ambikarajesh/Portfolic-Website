@@ -5,7 +5,7 @@ class Author extends Component {
     render() {
         return (
             <div className={styles.Image}>           
-                <img src = {authorImage} alt = 'authorImage'/>
+                <img src = {authorImage} alt = 'authorImage' height ={this.props.height} width = {this.props.width}/>
             </div>
         );
     }
