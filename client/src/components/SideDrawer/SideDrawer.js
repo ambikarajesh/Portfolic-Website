@@ -3,8 +3,8 @@ import Drawer from '@material-ui/core/Drawer';
 import { withStyles } from "@material-ui/core/styles";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Author from '../Author/Author';
-//import Author from '../Author/Author';
+import AuthorImage from '../Author/Author';
+import SocialMediaIcons from '../SocialMediaIcon/SocialMediaIcon';
 const styles = {    
     paper: {
         background: 'rgba(20, 41, 51,0.3)',
@@ -24,7 +24,7 @@ class SideDrawer extends React.Component{
     return (
         <div>            
             <Drawer classes={{paper:classes.paper}} open={this.props.open} onClose={()=> this.props.onclose(false)}>
-                <Author/>
+                <AuthorImage/>
                 <List component='nav'>
                     <ListItem button  selected={this.props.active ==='home' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('home')}> 
                         HOME
@@ -39,6 +39,7 @@ class SideDrawer extends React.Component{
                         CONTACT
                     </ListItem>
                 </List>
+                <SocialMediaIcons/>
             </Drawer>            
         </div>
     );
