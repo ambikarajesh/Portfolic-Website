@@ -1,0 +1,7 @@
+.Image>img{
+    height:100px;
+    width:100px;
+    margin:10px auto;
+    border-radius: 50% 50%;
+    border:2px solid #fff;
+}
