@@ -46,12 +46,12 @@ class Header extends Component {
         return (
             <div>
                 <AppBar position="fixed" style ={{backgroundColor:this.state.showHeader ? 'rgba(20, 41, 51 ,0.7)': 'transparent', boxShadow:'none'}}>
-                    <Toolbar>
-                        {!this.state.showSidebar? 
-                        <IconButton style = {{color:'#fff', cursor:'pointer'}} onClick = {()=>this.ToggleButton(true)}>
-                            <MenuIcon />
-                        </IconButton> : null}
-                    </Toolbar>
+                    {!this.state.showSidebar?
+                        <Toolbar>                         
+                            <IconButton style = {{color:'#fff', cursor:'pointer'}} onClick = {()=>this.ToggleButton(true)}>
+                                <MenuIcon />
+                            </IconButton> 
+                        </Toolbar>: null}
                     <SideDrawer open = {this.state.showSidebar} active = {this.state.active} scrolllTOElement = {(element)=>this.scrollTOElement(element)} onclose = {(value)=> this.ToggleButton(value)}/>
                     
                 </AppBar>

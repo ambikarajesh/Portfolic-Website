@@ -15,8 +15,7 @@ const styles = {
         color: "#43DDE0"
       }
   };
-class SideDrawer extends React.Component{
-       
+class SideDrawer extends React.Component{       
 
     render(){
     const { classes } = this.props;
@@ -40,6 +39,9 @@ class SideDrawer extends React.Component{
                     </ListItem>
                 </List>
                 <SocialMediaIcons/>
+                <div>
+                    <p style ={{color:'#ccc', fontStyle:'italic', fontSize:'13px'}}>@copy 2019 by <span style ={{color:'#43DDE0'}}>Ambika</span></p>
+                </div>
             </Drawer>            
         </div>
     );
