@@ -7,11 +7,12 @@ import AuthorImage from '../Author/Author';
 import SocialMediaIcons from '../SocialMediaIcon/SocialMediaIcon';
 const styles = {    
     paper: {
-        background: 'rgba(20, 41, 51,0.3)',
+        background: 'rgba(20, 41, 51,1)',
         color:'#fff',
         padding:'10px',
         fontFamily: "'Fresca', sans-serif",
         letterSpacing:1,
+        float:'right'
     },
     active: {
         color: "#43DDE0"

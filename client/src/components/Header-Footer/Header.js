@@ -5,6 +5,18 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SideDrawer from '../SideDrawer/SideDrawer';
 import {scroller} from 'react-scroll';
+import { withStyles } from '@material-ui/core/styles';
+const styles = {
+    
+    grow: {
+      flexGrow: 1,
+    },
+    name:{
+        color:'#43DDE0',
+        fontSize:'25px'
+    }
+  };
+  
 
 class Header extends Component {
     state = {
@@ -42,22 +54,25 @@ class Header extends Component {
             this.setState({showHeader:false, actve:"home"})
         }
     }
-    render() {    
+    render() {   
+        const { classes } = this.props; 
         return (
             <div>
-                <AppBar position="fixed" style ={{backgroundColor:this.state.showHeader ? 'rgba(20, 41, 51 ,0.7)': 'transparent', boxShadow:'none'}}>
+                <AppBar position="fixed" style ={{backgroundColor:this.state.showHeader ? 'rgba(20, 41, 51 ,0.9)': 'transparent', boxShadow:'none'}}>
                     {!this.state.showSidebar?
                         <Toolbar>                         
-                            <IconButton style = {{color:'#fff', cursor:'pointer'}} onClick = {()=>this.ToggleButton(true)}>
+                            <IconButton style = {{color:'#fff'}} onClick = {()=>this.ToggleButton(true)}>
                                 <MenuIcon />
-                            </IconButton> 
+                            </IconButton>
+                            <div className={classes.grow} />
+                            <div className={classes.name}>Ambika Kulathasamy</div>
                         </Toolbar>: null}
                     <SideDrawer open = {this.state.showSidebar} active = {this.state.active} scrolllTOElement = {(element)=>this.scrollTOElement(element)} onclose = {(value)=> this.ToggleButton(value)}/>
-                    
+                   
                 </AppBar>
             </div>
         );
     }
 }
 
-export default Header;
+export default withStyles(styles)(Header);

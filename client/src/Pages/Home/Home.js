@@ -13,7 +13,7 @@ class Home extends Component {
                     <AuthorImage height='150px' width='150px'/> 
                     <p>Hello, I am <span>Ambika Kulanthasamy</span> and</p>
                     <h1>I AM A FULL-STACK DEVELOPER</h1>
-                    <p>HTML <span>~</span> CSS <span>~</span> JavaScript <span>~</span> React <span>~</span> Redux <span>~</span> Node <span>~</span> Express <span>~</span> MongoDB</p>
+                    <p>HTML<span> ~ </span>CSS<span> ~ </span>JavaScript<span> ~ </span> React <span>~</span> Redux <span>~</span> Node <span>~</span> Express <span>~</span> MongoDB</p>
                     <SocialMediaIcons sidebar={false}/>
                 </div>                           
             </div>
