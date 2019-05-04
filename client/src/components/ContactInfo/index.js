@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './ContactInfo.module.css';
 import Zoom from 'react-reveal/Zoom';
-var FontAwesome = require('react-fontawesome');
-
+import FontAwesome from 'react-fontawesome';
 
 const contacts = [
     {
@@ -29,9 +28,9 @@ const ContactInfo = () => {
         <div className={styles.bck_gray}>
             <div className={styles.center_wrapper}>
                 <div className={styles.info_wrapper}>                
-                {contacts.map(contact=>{
+                {contacts.map((contact, index)=>{
                     return (
-                        <Zoom duration={contact.timedelay}>
+                        <Zoom duration={contact.timedelay} key={index}>
                             <div className={styles.info_item}>
                                 <div className={styles.info_outer}>
                                     <div className={styles.info_inner}>

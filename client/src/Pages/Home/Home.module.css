@@ -11,10 +11,10 @@
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-
+    text-align: center;
 }
 .author_details{
-    padding-top: 20%;
+    padding-top: 10%;
 }
 
 .author_details > p{
