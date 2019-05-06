@@ -31,6 +31,7 @@ const ContactInfo = () => {
                 {contacts.map((contact, index)=>{
                     return (
                         <Zoom duration={contact.timedelay} key={index}>
+                        <div className={styles.info_items}>
                             <div className={styles.info_item}>
                                 <div className={styles.info_outer}>
                                     <div className={styles.info_inner}>
@@ -51,6 +52,7 @@ const ContactInfo = () => {
                                         </div>
                                     </div>                            
                                 </div>                        
+                            </div>
                             </div>
                         </Zoom>
                     )

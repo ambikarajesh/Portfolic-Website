@@ -1,5 +1,5 @@
 .form_container{
-    width:30%;
+    width:40%;
     height: 100%;
     padding:20px;
 }
@@ -19,4 +19,15 @@
 .center_success_alert{
     color:green;
     text-align: center;
+}
+@media (max-width:480px)  { 
+    .form_container{
+        width:80%;
+    }
+}
+
+@media (max-width:801px)  { 
+    .form_container{
+        width:60%;
+    }
 }
