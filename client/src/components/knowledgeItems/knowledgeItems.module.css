@@ -1,0 +1,26 @@
+.items_wrapper{
+    display: flex;
+    margin:10px auto;
+    width:100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.item_wrapper{
+    width:16%;
+    text-align: center;
+    padding:10px;
+    margin:20px;
+}
+.item_wrapper > p{
+    color:#ccc;
+}
+
+@media (max-width:480px)  { 
+    .items_wrapper{
+        flex-direction: column;     
+    }
+    .item_wrapper{
+        width:80%;
+    }
+}
