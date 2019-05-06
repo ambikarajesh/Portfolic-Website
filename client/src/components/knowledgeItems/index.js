@@ -6,7 +6,7 @@ const techItems = [
     {icon:'code', title:'Web Application Development', content:'Fast, responsive and engaging apps that bring your ideas to life.'},
     {icon:'cog', title:'API Integration & Development', content:'REST API integration. REST API development with Node.js.'},
     {icon:'database', title:'Database Design', content:'Database architectures in MongoDB, MySQL, always aiming for performance, scale and stability.'},
-    {icon:'cloud', title:'Cloud Integration', content:'Deployment of NodeJS apps, ReactJS apps and databases to leading cloud platforms such as Heroku, Firebase'},
+    {icon:'cloud', title:'Cloud Integration', content:'Deployment of NodeJS apps, ReactJS apps and databases to leading cloud platforms such as Heroku, Google Cloud'},
     {icon:'funnel-dollar', title:'Payment Gateway Integration', content:'Integration with the most popular Payment Gateways such as Stripe and Paypal.'}
 
 ]
@@ -21,9 +21,9 @@ class knowledgeItems extends Component {
                                 <FontAwesome
                                     name={item.icon} 
                                     size='2x' 
-                                    style={{background:'#43DDE0', width:'65px', borderRadius:'50% 50%', padding:'15px', color:'#fff'}}                                 
+                                    style={{background:'#43DDE0', width:'65px', borderRadius:'50% 50%', padding:'15px', color:'#666'}}                                 
                                 />
-                                <h5>{item.title}</h5>
+                                <h5 style={{margin:'10px auto', color:'#fff'}}>{item.title}</h5>
                                 <p>{item.content}</p>
                             </div>
                         </Zoom>

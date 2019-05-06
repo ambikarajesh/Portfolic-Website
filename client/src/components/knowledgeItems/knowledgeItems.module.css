@@ -7,10 +7,10 @@
     justify-content: center;
 }
 .item_wrapper{
-    width:16%;
+    width:220px;
     text-align: center;
-    padding:10px;
-    margin:20px;
+    padding:5px;
+    margin:20px;   
 }
 .item_wrapper > p{
     color:#ccc;
@@ -21,6 +21,6 @@
         flex-direction: column;     
     }
     .item_wrapper{
-        width:80%;
+        width:90%;
     }
 }

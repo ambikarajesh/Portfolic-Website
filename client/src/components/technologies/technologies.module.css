@@ -1,0 +1,15 @@
+h5{
+    text-align: center;
+    color:  #ccc;
+    width:80px;
+    margin:20px auto;
+}
+.logos, h6{
+    display: flex;
+    justify-content: center;
+}
+.image{
+    height:15%;
+    width: 15%;
+    padding:10px;
+}

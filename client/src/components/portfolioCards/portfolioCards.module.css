@@ -4,9 +4,16 @@
     margin:20px;
     box-sizing: border-box;
 }
+
+@media (max-width:801px)  { 
+    .cards{        
+        width:40%;
+        margin:20px auto;
+    }
+}
 @media (max-width:480px)  { 
     .cards{        
-        width:80%;
+        width:100%;
         margin:20px auto;
     }
 }
