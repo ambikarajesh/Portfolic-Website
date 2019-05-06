@@ -23,8 +23,7 @@ class SideDrawer extends React.Component{
     render(){
     const { classes } = this.props;
     
-    return (
-        <div style = {{}}>            
+    return (                 
             <Drawer classes={{paper:classes.paper}} open={this.props.open} onClose={()=> this.props.onclose(false)}>
                 <AuthorImage height='100px' width='100px'/>
                 <List component='nav'>
@@ -45,8 +44,7 @@ class SideDrawer extends React.Component{
                 <div>
                     <p style ={{color:'#ccc', fontStyle:'italic', fontSize:'13px'}}>@copy 2019 by <span style ={{color:'#43DDE0'}}>Ambika</span></p>
                 </div>
-            </Drawer>            
-        </div>
+            </Drawer>
     );
 }
 }

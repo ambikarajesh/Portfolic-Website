@@ -3,7 +3,8 @@ const title_style ={
     textAlign:'center',
     textTransform:'uppercase',
     margin:'0 auto 50px',
-    paddingTop:'75px'
+    paddingTop:'75px',
+    fontSize:'30px'
     
 }
 const Title = (props) => {
