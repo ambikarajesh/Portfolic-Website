@@ -7,8 +7,12 @@
 .cards_wrapper{
     display: flex;
     width:100%;
-    border:1px solid red;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+}
+@media (max-width:480px)  { 
+    .cards_wrapper{
+        flex-direction: column;     
+    }
 }

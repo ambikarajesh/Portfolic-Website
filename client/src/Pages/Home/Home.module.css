@@ -21,8 +21,9 @@
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     letter-spacing: 1px;
+    margin:20px auto;
 }
-.author_details > p > span{
+.author_details > h1 > span{
     color:#43DDE0;
 }
 .author_details > h1{

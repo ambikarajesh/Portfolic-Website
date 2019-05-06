@@ -43,12 +43,15 @@ class Header extends Component {
             this.setState({showHeader:true, active:"home"});
         }
         else if(window.scrollY>400 && window.scrollY<1200){
-            this.setState({showHeader:true, active:"about"});
+            this.setState({showHeader:true, active:"work"});
         }
         else if(window.scrollY>=1200 && window.scrollY<1600){
             this.setState({showHeader:true, active:"portfolio"});
         }
-        else if(window.scrollY>1600){
+        else if(window.scrollY>=1600 && window.scrollY<2500){
+            this.setState({showHeader:true, active:"about"})
+        }
+        else if(window.scrollY>2500){
             this.setState({showHeader:true, active:"contact"})
         }else{
             this.setState({showHeader:false, actve:"home"})

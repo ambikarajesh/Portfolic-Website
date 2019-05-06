@@ -30,11 +30,14 @@ class SideDrawer extends React.Component{
                     <ListItem button  selected={this.props.active ==='home' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('home')}> 
                         HOME
                     </ListItem>
-                    <ListItem button selected={this.props.active ==='about' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('about')}>
-                        ABOUT
+                    <ListItem button selected={this.props.active ==='work' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('work')}>
+                        WHAT I DO
                     </ListItem>
                     <ListItem button selected={this.props.active ==='portfolio' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('portfolio')}>
                         PORTFOLIO
+                    </ListItem>
+                    <ListItem button selected={this.props.active ==='about' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('about')}>
+                        ABOUT
                     </ListItem>
                     <ListItem button selected={this.props.active ==='contact' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('contact')}>
                         CONTACT

@@ -1,0 +1,12 @@
+.cards{
+    width:25%;
+    height:10%;
+    margin:20px;
+    box-sizing: border-box;
+}
+@media (max-width:480px)  { 
+    .cards{        
+        width:80%;
+        margin:20px auto;
+    }
+}

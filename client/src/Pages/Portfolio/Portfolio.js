@@ -5,10 +5,10 @@ import PortfolioCards from '../../components/portfolioCards';
 import backImage from '../../images/home-page-image.jpeg';
 const projects = [
     {image:backImage, title:'project_one', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
-    {image:backImage, title:'project_two', content:'project_two_content'},
-    {image:backImage, title:'project_three', content:'project_three_content'},
-    {image:backImage, title:'project_four', content:'project_four_content'},
-    {image:backImage, title:'project_four', content:'project_four_content'}
+    {image:backImage, title:'project_two', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
+    {image:backImage, title:'project_three', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
+    {image:backImage, title:'project_four', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
+    {image:backImage, title:'project_four', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'}
 ]
 class Portfolio extends Component {
     render() {
