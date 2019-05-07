@@ -1,0 +1,18 @@
+.AboutMe{
+    border:3px solid #ccc;
+    border-radius: 5px 5px;
+    padding:30px;
+    margin:20px auto;
+    font-size: 20px;
+    width:100%;
+    text-align: center;
+}
+.AboutMe > h4{
+    padding:20px 0;
+}
+.AboutMe > p{
+    margin-top:20px;
+    text-align:justify;
+    color: #aaa;
+    
+}

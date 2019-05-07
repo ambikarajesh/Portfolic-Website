@@ -15,7 +15,7 @@ class Home extends Component {
                     <div className={styles.author_details}>
                         <AuthorImage height='150px' width='150px'/> 
                         <p>Hello, I am <span>Ambika Kulanthasamy</span> and</p>
-                        <h1>I AM A FULL-STACK <span>Node JS | React JS </span>DEVELOPER</h1>
+                        <h3>I AM A FULL-STACK <span>Node JS | React JS </span>DEVELOPER</h3>
                         <SocialMediaIcons sidebar={false}/>
                     </div>  
                 </Zoom>                         

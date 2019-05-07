@@ -13,10 +13,12 @@ import mysql from '../../images/mysql.png';
 import google_cloud from '../../images/google-cloud.png';
 import heroku from '../../images/heroku.png';
 import styles from './technologies.module.css';
+import Zoom from 'react-reveal/Zoom';
 const Technologies= () => {
     return (
-        <React.Fragment>
-            <h5>Front-End</h5>
+        <Zoom duration={2000}>
+            <p>My skills include but are not limited to:</p>
+            <h5>Front-End:</h5>            
             <div className={styles.logos}>
                 <img src = {html} alt = 'html' className={styles.image}/>
                 <img src = {css} alt = 'css' className={styles.image}/>
@@ -26,23 +28,23 @@ const Technologies= () => {
                 <img src = {redux} alt = 'redux' className={styles.image}/>
             </div>
             
-            <h5>Server</h5>
+            <h5>Server:</h5>
             <div className={styles.logos}>
                 <img src = {node} alt = 'node' className={styles.image}/>
                 <img src = {express} alt = 'express' className={styles.image}/>
                 <img src = {npm} alt = 'npm' className={styles.image} style={{paddingTop:'30px'}}/>
             </div>
-            <h5>Databases</h5>
+            <h5>Databases:</h5>
             <div className={styles.logos}>
                 <img src = {mongodb} alt = 'mongodb' className={styles.image}/>
                 <img src = {mysql} alt = 'mysql' className={styles.image}/>
             </div>
-            <h5>Cloud</h5>
+            <h5>Cloud:</h5>
             <div className={styles.logos}>
                 <img src = {heroku} alt = 'heroku' className={styles.image}/>
                 <img src = {google_cloud} alt = 'google_cloud' className={styles.image}/>
             </div>
-        </React.Fragment>
+        </Zoom>
     );
 };
 

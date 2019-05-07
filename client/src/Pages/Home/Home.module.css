@@ -23,10 +23,10 @@
     letter-spacing: 1px;
     margin:20px auto;
 }
-.author_details > h1 > span{
+.author_details > h3 > span{
     color:#43DDE0;
 }
-.author_details > h1{
+.author_details > h3{
     font-family: 'Fresca', sans-serif;    
     letter-spacing:1.8px;
 }
