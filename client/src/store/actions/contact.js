@@ -3,7 +3,6 @@ import {SERVER} from '../../components/utils/misc';
 import axios from 'axios';
 export const submitContact = (submitdata) => {
     const req = axios.post(`${SERVER}/contact`, submitdata).then(res=> res.data).catch(err=> err.response.data);
-    console.log(submitdata)
     return {
         type:actionTypes.CONTACT_DETAIL,
         payload:req

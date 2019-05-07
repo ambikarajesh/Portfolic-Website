@@ -157,9 +157,9 @@ class ContactForm extends React.Component {
                     </form>  
                     </Zoom> 
                     <Dialog open = {this.state.formSuccess}>
-                        <div className={styles.center_success_alert}>
+                        <div className={styles.center_success_alert} style={{fontWeight:'bold', padding:'20px'}}>
                             <div>{this.state.formValidErr} !!!</div>
-                            <div>I will response you in a couple of days...</div>
+                            <div style={{color:'#000'}}>I will response you in a couple of days...</div>
                         </div>
                     </Dialog>             
                 </MDBContainer>       

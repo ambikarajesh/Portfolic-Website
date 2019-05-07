@@ -1,5 +1,16 @@
 const {validationResult} = require('express-validator/check');
 const Contact = require('../models/contact');
+var mailer = require("nodemailer");
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// Use Smtp Protocol to send Email
+var transporter = mailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'ambikula@gmail.com',
+      pass: 'Dec23@1986'
+    }
+  });
+  
 exports.postContact = (req, res, next) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -11,6 +22,20 @@ exports.postContact = (req, res, next) => {
     }
     const contact = new Contact(req.body);
     contact.save().then(result=>{
+        var mailOptions = {
+            from: `${req.body.name} <${req.body.email}>`,
+            to: 'ambikula@gmail.com',
+            subject: req.body.subject,
+            text: req.body.message
+          };
+          
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              console.log(error);
+            } else {
+              console.log('Email sent: ' + info.response);
+            }
+          });
         res.status(201).json({
             status:"00",
             message: "Contact submitted Successfully",
