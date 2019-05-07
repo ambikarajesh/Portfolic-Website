@@ -14,9 +14,9 @@ class knowledgeItems extends Component {
     render() {
         return (
             <div className={styles.items_wrapper}>
-                {techItems.map(item=>{
+                {techItems.map((item, index)=>{
                     return (
-                        <Zoom duration={1500}>
+                        <Zoom duration={1500} key={index}>
                             <div className={styles.item_wrapper}>                        
                                 <FontAwesome
                                     name={item.icon} 

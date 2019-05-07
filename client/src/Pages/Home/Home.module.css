@@ -14,7 +14,7 @@
     text-align: center;
 }
 .author_details{
-    padding: 15%;
+    padding: 10%;
 }
 
 .author_details > p{
@@ -23,7 +23,7 @@
     letter-spacing: 1px;
     margin:20px auto;
 }
-.author_details > h3 > span{
+.author_details > h3 > span, .author_details > p > span{
     color:#43DDE0;
 }
 .author_details > h3{

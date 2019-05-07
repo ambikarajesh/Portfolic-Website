@@ -56,3 +56,13 @@ export const validateForm = (inputs) => {
     })
     return initalValid;
 } 
+export const clearInputs = (oldInputs) => {
+    const inputs = oldInputs;
+    Object.keys(inputs).forEach(input=>{
+        inputs[input].value = '';
+        inputs[input].valid = false;
+        inputs[input].touched = false;
+        inputs[input].validationMsg = ''
+    })
+    return inputs;
+}

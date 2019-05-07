@@ -2,7 +2,12 @@ import React from "react";
 import { MDBContainer, MDBBtn, MDBInput } from 'mdbreact';
 import styles from './ContactForm.module.css';
 import Zoom from 'react-reveal/Zoom';
-import {updateInput, generateData, validateForm} from '../utils/updateForm';
+import {withRouter} from 'react-router-dom'
+import Dialog from '@material-ui/core/Dialog';
+import {updateInput, generateData, validateForm, clearInputs} from '../utils/updateForm';
+import {connect} from 'react-redux';
+import {submitContact} from '../../store/actions/contact';
+
 class ContactForm extends React.Component {
     state = {
         inputs:{
@@ -73,7 +78,8 @@ class ContactForm extends React.Component {
             }
         },
         formValid:true,
-        formValidErr:false
+        formValidErr:false,
+        formSuccess:false
     }
     inputHandler = (element) =>{
         const updateInputs = updateInput(element, this.state.inputs);
@@ -82,12 +88,25 @@ class ContactForm extends React.Component {
     submitHandler = () => {
         const submitData = generateData(this.state.inputs);
         const validForm = validateForm(this.state.inputs);
-        if(validForm){     
-            console.log(submitData)
-            this.setState({formValid:true, formValidErr:'Message Submitted Succesfully'})
+        if(validForm){                 
+            this.props.dispatch(submitContact(submitData)).then(res=> {
+                if(res.payload.status === '00'){
+                    this.setState({formValid:true, formSuccess:true, formValidErr:res.payload.message})
+                    setTimeout(()=>{
+                        this.props.history.push('/')
+                        const inputs = clearInputs(this.state.inputs)
+                        this.setState({inputs:inputs, formValid:true, formSuccess:false, formValidErr:false})
+                    }, 3000)
+                }else{
+                    this.setState({formValid:false, formValidErr:res.payload.message})
+                }                
+            }).catch(err=>{
+                this.setState({formValid:false, formValidErr:'Invalid Inputs'})
+            })
+        
         }else{
-           this.setState({formValid:false, formValidErr:'Invalid Inputs'}) 
-        }
+                this.setState({formValid:false, formValidErr:'Invalid Inputs'}) 
+            }
 
     }
     render(){  
@@ -136,10 +155,17 @@ class ContactForm extends React.Component {
                         <MDBBtn style={{backgroundColor:'#43DDE0'}} onClick = {this.submitHandler}>Submit</MDBBtn>            
                         </div>
                     </form>  
-                    </Zoom>              
+                    </Zoom> 
+                    <Dialog open = {this.state.formSuccess}>
+                        <div className={styles.center_success_alert}>
+                            <div>{this.state.formValidErr} !!!</div>
+                            <div>I will response you in a couple of days...</div>
+                        </div>
+                    </Dialog>             
                 </MDBContainer>       
         );
     }
 };
 
-export default ContactForm;
+export default connect()(withRouter(ContactForm));
+

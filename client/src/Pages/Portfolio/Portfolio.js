@@ -16,8 +16,8 @@ class Portfolio extends Component {
             <div className={styles.Portfolio} style={{backgroundImage:`linear-gradient(rgba(20, 41, 51 ,0.8), rgba(8, 20, 26 ,1)), url(${backImage})`}}>
                <Title title='Portfolio'/>
                <div className={styles.cards_wrapper}>
-                    {projects.map(project=>{
-                        return <PortfolioCards image={project.image} title={project.title} content={project.content}/>
+                    {projects.map((project, index)=>{
+                        return <PortfolioCards image={project.image} title={project.title} content={project.content} key={index}/>
                     })}
                     
                </div>
