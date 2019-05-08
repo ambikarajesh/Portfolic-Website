@@ -5,6 +5,11 @@ const validateInput = (newInput, formData) => {
         const message = `${!valid ? 'Invalid Email':''}`;
         error = valid ? error : [valid, message];
     }
+    if(newInput.validation.password){
+        const valid = newInput.value.match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/) !== null;
+        const message = `${!valid ? 'Invalid Password':''}`;
+        error = valid ? error : [valid, message];
+    } 
     if(newInput.validation.name){
         const valid = newInput.value.length >= 2;
         const message = `${!valid ? 'Min 2 chars long':''}`;

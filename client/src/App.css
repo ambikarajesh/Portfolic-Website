@@ -1,12 +1,3 @@
 .App {
   font-family: 'Fresca', sans-serif;
 }
-ul{
-  list-style: none;
-  width:30%;
-  margin:auto;
-}
-li{
-  padding:10px;
-  border-bottom: 1px dotted #ccc; 
-}

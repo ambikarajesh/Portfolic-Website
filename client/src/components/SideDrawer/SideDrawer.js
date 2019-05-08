@@ -5,6 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import AuthorImage from '../Author/Author';
 import SocialMediaIcons from '../SocialMediaIcon/SocialMediaIcon';
+import Admin from '../Admin';
 const styles = {    
     paper: {
         background: 'rgba(20, 41, 51,1)',
@@ -26,7 +27,7 @@ class SideDrawer extends React.Component{
     return (                 
             <Drawer classes={{paper:classes.paper}} open={this.props.open} onClose={()=> this.props.onclose(false)}>
                 <AuthorImage height='100px' width='100px'/>
-                <List component='nav'>
+                <List component='nav' style={{borderBottom:'1px dotted #666', padding:'10px 0'}}>
                     <ListItem button  selected={this.props.active ==='home' ? true : false } classes={{ selected: classes.active }} onClick ={()=>this.props.scrolllTOElement('home')}> 
                         HOME
                     </ListItem>
@@ -43,6 +44,7 @@ class SideDrawer extends React.Component{
                         CONTACT
                     </ListItem>
                 </List>
+                <Admin/>
                 <SocialMediaIcons sidebar = {true}/>
                 <div>
                     <p style ={{color:'#ccc', fontStyle:'italic', fontSize:'13px'}}>@copy 2019 by <span style ={{color:'#43DDE0'}}>Ambika</span></p>
