@@ -1,13 +1,15 @@
 const {validationResult} = require('express-validator/check');
 const Contact = require('../models/contact');
 var mailer = require("nodemailer");
+const dotenv = require('dotenv');
+dotenv.config();
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 // Use Smtp Protocol to send Email
 var transporter = mailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'ambikula@gmail.com',
-      pass: 'Dec23@1986'
+      user: process.env.GUSERID,
+      pass: process.env.GPWD
     }
   });
   
