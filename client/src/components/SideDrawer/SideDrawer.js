@@ -5,6 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import AuthorImage from '../Author/Author';
 import SocialMediaIcons from '../SocialMediaIcon/SocialMediaIcon';
+import AddProjects from '../addProjects';
 import Admin from '../Admin';
 const styles = {    
     paper: {
@@ -44,6 +45,7 @@ class SideDrawer extends React.Component{
                         CONTACT
                     </ListItem>
                 </List>
+                <AddProjects/>
                 <Admin/>
                 <SocialMediaIcons sidebar = {true}/>
                 <div>
