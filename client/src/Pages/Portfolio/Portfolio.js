@@ -11,6 +11,10 @@ class Portfolio extends Component {
         projects:[]
     }
     componentDidMount(){
+        this.getProjects();
+    }
+    
+    getProjects = () => {
         this.props.dispatch(fetchProjects()).then(res=>{
             if(res.payload.status === '00'){
                 this.setState({projects:res.payload.projects})
@@ -19,13 +23,14 @@ class Portfolio extends Component {
 
         })
     }
+    
     render() {
         return (
             <div className={styles.Portfolio} style={{backgroundImage:`linear-gradient(rgba(20, 41, 51 ,0.8), rgba(8, 20, 26 ,1)), url(${backImage})`}}>
                <Title title='Portfolio'/>
                <div className={styles.cards_wrapper}>
                     {this.state.projects.map((project, index)=>{
-                        return <PortfolioCards image={project.image} title={project.title} content={project.languages} key={index}/>
+                        return <PortfolioCards image={project.image} title={project.title} languages={project.languages} link={project.link} key={index}/>
                     })}
                     
                </div>

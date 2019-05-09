@@ -11,7 +11,7 @@ const projectSchma = new Schema({
         type:String,
         required:true,  
     },
-    description:{
+    link:{
         type:String,
         required:true, 
     },

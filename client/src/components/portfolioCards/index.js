@@ -26,7 +26,7 @@ const MediaCard = (props) => {
     const { classes } = props;
     return (
         
-        <div className={style.cards}>
+        <a href={props.link} className={style.cards}>
         <Zoom duration={2000}>
             <Card className={classes.card}>
                 <CardActionArea>
@@ -40,13 +40,13 @@ const MediaCard = (props) => {
                             {props.title}
                         </Typography>
                         <Typography component="p" style={{color:'#ccc'}}>
-                        {props.content}
+                            {props.languages}
                         </Typography>
                     </CardContent>
                 </CardActionArea>       
             </Card>
             </Zoom>
-        </div>
+        </a>
     );
 }
 

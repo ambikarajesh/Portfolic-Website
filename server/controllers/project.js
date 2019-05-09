@@ -28,7 +28,6 @@ exports.postProject = (req, res, next) => {
 
 exports.getProjects = (req, res, next) => {
     Project.find().then(projects=>{
-        console.log(projects)
         res.status(200).json({
             status:"00",
             message:'Fetch Projects Successfully',

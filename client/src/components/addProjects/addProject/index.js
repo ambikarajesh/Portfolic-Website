@@ -43,17 +43,17 @@ class Login extends React.Component {
                 touched:false,
                 validationMsg:""
             },
-            description:{
+            link:{
                 config:{
-                    label:"Description", 
+                    label:"link", 
                     icon:"pencil-alt", 
                     type:"text", 
-                    name:'description'
+                    name:'link'
                 },                 
                 value:'',
                 validation:{
                     required:true,
-                    description:true
+                    link:true
                 },
                 valid:false,
                 touched:false,
@@ -94,7 +94,7 @@ class Login extends React.Component {
                         if(res.payload.status === '00'){
                             this.setState({formValid:true, formSuccess:true, formValidErr:res.payload.message})
                             setTimeout(()=>{
-                                this.props.history.push('/')
+                                this.forceUpdate();
                                 this.handleClose();
                             }, 3000)
                         }else{

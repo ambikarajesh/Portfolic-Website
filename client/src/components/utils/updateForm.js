@@ -25,7 +25,7 @@ const validateInput = (newInput, formData) => {
         const message = `${!valid ? 'Min 4 chars long':''}`;
         error = valid ? error : [valid, message];
     }
-    if(newInput.validation.description){
+    if(newInput.validation.link){
         const valid = newInput.value.length >= 10;
         const message = `${!valid ? 'Min 10 chars long':''}`;
         error = valid ? error : [valid, message];
