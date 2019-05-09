@@ -83,11 +83,11 @@ class Login extends React.Component {
             return errorMsg;
         }      
         return (
-          <Dialog open = {this.props.open} onClose={this.handleClose}>      
+          <Dialog open = {this.props.open} onClose={this.handleClose} fullWidth={true} maxWidth='sm'>      
                 <MDBContainer className={styles.login_container}>
                 <Zoom duration={2000}>               
                     <form className={styles.form_wrapper}>
-                        <p className="h5 text-center mb-4">Admin</p>
+                        <p className="h5 text-center mb-4">ADMIN</p>
                         {!this.state.formValid ?showError(this.state.formValidErr, this.state.formValid, 'center'): showError(this.state.formValidErr, this.state.formValid, 'center')}
                         <div className="grey-text">
                             {Object.keys(this.state.inputs).map((input, index)=>{

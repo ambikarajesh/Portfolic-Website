@@ -32,10 +32,10 @@ class AddProject extends React.Component {
     render(){  
            
         return (
-          <Dialog open = {this.props.open} onClose={this.handleClose}>      
+          <Dialog open = {this.props.open} onClose={this.handleClose} fullWidth={true} maxWidth='sm'>      
                 <MDBContainer className={styles.login_container}>     
                     <form>
-                        <p className="h5 text-center mb-4">Add Project</p>
+                        <p className="h5 text-center mb-4">ADD PROJECT</p>
                         <div className="grey-text">                            
                             <MDBInput
                                 label="Title"                           
