@@ -3,21 +3,29 @@ import styles from './Portfolio.module.css';
 import Title from '../../components/Title';
 import PortfolioCards from '../../components/portfolioCards';
 import backImage from '../../images/home-page-image.jpeg';
-const projects = [
-    {image:backImage, title:'project_one', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
-    {image:backImage, title:'project_two', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
-    {image:backImage, title:'project_three', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
-    {image:backImage, title:'project_four', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'},
-    {image:backImage, title:'project_four', content:'Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica'}
-]
+import {connect} from 'react-redux';
+import {fetchProjects} from '../../store/actions/projects';
+
 class Portfolio extends Component {
+    state={
+        projects:[]
+    }
+    componentDidMount(){
+        this.props.dispatch(fetchProjects()).then(res=>{
+            if(res.payload.status === '00'){
+                this.setState({projects:res.payload.projects})
+            }
+        }).catch(err=>{
+
+        })
+    }
     render() {
         return (
             <div className={styles.Portfolio} style={{backgroundImage:`linear-gradient(rgba(20, 41, 51 ,0.8), rgba(8, 20, 26 ,1)), url(${backImage})`}}>
                <Title title='Portfolio'/>
                <div className={styles.cards_wrapper}>
-                    {projects.map((project, index)=>{
-                        return <PortfolioCards image={project.image} title={project.title} content={project.content} key={index}/>
+                    {this.state.projects.map((project, index)=>{
+                        return <PortfolioCards image={project.image} title={project.title} content={project.languages} key={index}/>
                     })}
                     
                </div>
@@ -27,4 +35,4 @@ class Portfolio extends Component {
     }
 }
 
-export default Portfolio;
+export default connect()(Portfolio);

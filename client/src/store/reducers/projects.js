@@ -2,11 +2,14 @@ import * as actionTypes from '../types';
 const initialState = {
 
 }
-
-
 const reducer = (state={initialState}, action) =>{
     switch(action.type){
         case actionTypes.SUBMIT_PROJECT:
+        return {
+            ...state,
+            payload:action.payload
+        }
+        case actionTypes.FETCH_PROJECTS:
         return {
             ...state,
             payload:action.payload

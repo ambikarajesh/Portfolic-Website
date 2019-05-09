@@ -8,3 +8,11 @@ export const submitProject = (project) => {
         payload:req
     }
 }
+
+export const fetchProjects = () =>{
+    const req = axios.get(`${SERVER}/projects`).then(res=> res.data).catch(err=> err.response.data);
+    return {
+        type:actionTypes.FETCH_PROJECTS,
+        payload:req
+    }
+}
