@@ -15,6 +15,21 @@ const validateInput = (newInput, formData) => {
         const message = `${!valid ? 'Min 2 chars long':''}`;
         error = valid ? error : [valid, message];
     }
+    if(newInput.validation.title){
+        const valid = newInput.value.length >= 5;
+        const message = `${!valid ? 'Min 5 chars long':''}`;
+        error = valid ? error : [valid, message];
+    }
+    if(newInput.validation.languages){
+        const valid = newInput.value.length >= 4;
+        const message = `${!valid ? 'Min 4 chars long':''}`;
+        error = valid ? error : [valid, message];
+    }
+    if(newInput.validation.description){
+        const valid = newInput.value.length >= 10;
+        const message = `${!valid ? 'Min 10 chars long':''}`;
+        error = valid ? error : [valid, message];
+    }
     if(newInput.validation.subject){
         const valid = newInput.value.length >= 3;
         const message = `${!valid ? 'Min 3 chars long':''}`;
@@ -70,4 +85,20 @@ export const clearInputs = (oldInputs) => {
         inputs[input].validationMsg = ''
     })
     return inputs;
+}
+
+export const validateImage = (oldImage) => {
+    const image = {...oldImage};
+    if(image.name!==''){
+        image.valid = true;
+        image.validationMsg = ''
+    }
+    return image.valid;
+}
+export const clearFile = (oldImage) => {
+    const image = {...oldImage}
+    image.name = '';
+    image.valid = false;
+    image.validationMsg = 'upload image';
+    return image;
 }

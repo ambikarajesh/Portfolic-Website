@@ -60,8 +60,9 @@ class Login extends React.Component {
         }
 
     }
-    handleClose = () => {
-        clearInputs(this.state.inputs);  
+    handleClose = () => {        
+        const inputs = clearInputs(this.state.inputs); 
+        this.setState({inputs:inputs, formValidErr:false, formValid:true, formSuccess:false}) 
         this.props.onClose();
     };
     render(){  
