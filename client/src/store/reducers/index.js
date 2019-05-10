@@ -1,9 +1,9 @@
 import {combineReducers} from 'redux';
-import contact from './contact';
-import projects from './projects';
+import contactReducer from './contact';
+import projectsReducer from './projects';
 const reducers = combineReducers({
-    contact,
-    projects
+    contactReducer,
+    projectsReducer
 })
 
 export default reducers;

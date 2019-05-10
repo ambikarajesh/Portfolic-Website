@@ -7,7 +7,7 @@ import {updateInput, generateData, validateForm, clearInputs, validateImage, cle
 import {storage} from '../../../firebase';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import {submitProject} from '../../../store/actions/projects';
+import * as actionCreators from '../../../store/actions';
 class Login extends React.Component {
     state = {
         inputs:{            
@@ -90,13 +90,13 @@ class Login extends React.Component {
                 const validImage = validateImage(this.state.image);
                 const project = {...submitData, image:url}
                 if(validForm && validImage){   
-                    this.props.dispatch(submitProject(project)).then(res=>{
+                    this.props.dispatch(actionCreators.submitProject(project)).then(res=>{
                         if(res.payload.status === '00'){
                             this.setState({formValid:true, formSuccess:true, formValidErr:res.payload.message})
                             setTimeout(()=>{
-                                this.forceUpdate();
+                                this.props.dispatch(actionCreators.fetchProjects());
                                 this.handleClose();
-                            }, 3000)
+                            }, 1000)
                         }else{
                             this.setState({formValid:false, formValidErr:res.payload.message})
                         } 

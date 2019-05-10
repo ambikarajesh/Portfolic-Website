@@ -4,40 +4,40 @@ import Title from '../../components/Title';
 import PortfolioCards from '../../components/portfolioCards';
 import backImage from '../../images/home-page-image.jpeg';
 import {connect} from 'react-redux';
-import {fetchProjects} from '../../store/actions/projects';
-
-class Portfolio extends Component {
-    state={
-        projects:[]
-    }
+import * as actionCreators from '../../store/actions';
+class Portfolio extends Component {   
     componentDidMount(){
-        this.getProjects();
+        this.props.fetchProjects();
     }
-    
-    getProjects = () => {
-        this.props.dispatch(fetchProjects()).then(res=>{
-            if(res.payload.status === '00'){
-                this.setState({projects:res.payload.projects})
-            }
-        }).catch(err=>{
-
-        })
+    shouldComponentUpdate(nextProps, nextState){
+        return nextProps.projects.length!==this.props.projects.length;
     }
     
     render() {
+        console.log(this.props.projects)
+        const portfolioList = this.props.projects.length >=0 ? (<div className={styles.cards_wrapper}>
+                                                                        {this.props.projects.map((project, index)=>{
+                                                                            return <PortfolioCards image={project.image} title={project.title} languages={project.languages} link={project.link} key={index}/>
+                                                                        })}
+                                                                        
+                                                                </div>) : null;
         return (
             <div className={styles.Portfolio} style={{backgroundImage:`linear-gradient(rgba(20, 41, 51 ,0.8), rgba(8, 20, 26 ,1)), url(${backImage})`}}>
                <Title title='Portfolio'/>
-               <div className={styles.cards_wrapper}>
-                    {this.state.projects.map((project, index)=>{
-                        return <PortfolioCards image={project.image} title={project.title} languages={project.languages} link={project.link} key={index}/>
-                    })}
-                    
-               </div>
+               {portfolioList}
                
             </div>
         );
     }
 }
-
-export default connect()(Portfolio);
+const mapStateToProps = state => {
+    return {
+        projects: state.projectsReducer.projects
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchProjects: ()=> dispatch(actionCreators.fetchProjects())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);

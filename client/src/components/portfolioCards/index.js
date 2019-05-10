@@ -36,10 +36,10 @@ const MediaCard = (props) => {
                     title="Contemplative Reptile"
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2" style={{color:'#43DDE0'}}>
+                        <Typography gutterBottom variant="h5" component="h2" style={{color:'#43DDE0', fontSize:'15px'}}>
                             {props.title}
                         </Typography>
-                        <Typography component="p" style={{color:'#ccc'}}>
+                        <Typography component="p" style={{color:'#ccc', fontSize:'12px'}}>
                             {props.languages}
                         </Typography>
                     </CardContent>
