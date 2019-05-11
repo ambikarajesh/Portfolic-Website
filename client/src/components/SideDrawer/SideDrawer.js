@@ -7,6 +7,8 @@ import AuthorImage from '../Author/Author';
 import SocialMediaIcons from '../SocialMediaIcon/SocialMediaIcon';
 import AddProjects from '../addProjects';
 import Admin from '../Admin';
+import {connect} from 'react-redux';
+import Logout from '../Admin/Logout';
 const styles = {    
     paper: {
         background: 'rgba(20, 41, 51,1)',
@@ -24,7 +26,7 @@ class SideDrawer extends React.Component{
 
     render(){
     const { classes } = this.props;
-    
+    console.log(this.props.isAuth)
     return (                 
             <Drawer classes={{paper:classes.paper}} open={this.props.open} onClose={()=> this.props.onclose(false)}>
                 <AuthorImage height='100px' width='100px'/>
@@ -45,8 +47,8 @@ class SideDrawer extends React.Component{
                         CONTACT
                     </ListItem>
                 </List>
-                <AddProjects/>
-                <Admin/>
+                {this.props.isAuth ? <AddProjects/> : null}
+                {this.props.isAuth ? <Logout/> : <Admin/>}
                 <SocialMediaIcons sidebar = {true}/>
                 <div>
                     <p style ={{color:'#ccc', fontStyle:'italic', fontSize:'13px'}}>@copy 2019 by <span style ={{color:'#43DDE0'}}>Ambika</span></p>
@@ -55,5 +57,9 @@ class SideDrawer extends React.Component{
     );
 }
 }
-
-export default withStyles(styles)(SideDrawer);
+const mapStateToProps = state => {
+    return {
+        isAuth: state.userReducer.userId !== null
+    }
+}
+export default connect(mapStateToProps)(withStyles(styles)(SideDrawer));

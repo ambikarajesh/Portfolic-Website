@@ -4,7 +4,8 @@ import styles from '../../ContactForm/ContactForm.module.css';
 import Zoom from 'react-reveal/Zoom';
 import Dialog from '@material-ui/core/Dialog';
 import {updateInput, generateData, validateForm, clearInputs} from '../../utils/updateForm';
-
+import * as actionCreators from '../../../store/actions';
+import {connect} from 'react-redux';
 class Login extends React.Component {
     state = {
         inputs:{            
@@ -54,6 +55,7 @@ class Login extends React.Component {
         const validForm = validateForm(this.state.inputs);
         if(validForm){                 
             console.log(submitData);
+            this.props.dispatch(actionCreators.fetchUser(submitData));
             this.handleClose();
         }else{
             this.setState({formValid:false, formValidErr:'Invalid Inputs'}) 
@@ -119,5 +121,5 @@ class Login extends React.Component {
     }
 };
 
-export default Login;
+export default connect()(Login);
 

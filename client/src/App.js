@@ -9,8 +9,13 @@ import Work from './Pages/Work/Work';
 import About from './Pages/About/About';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Contact from './Pages/Contact/Contact';
+import * as actionCreators from './store/actions';
+import {connect} from 'react-redux';
 class App extends Component {
-  
+  componentDidMount(){
+    console.log('in')
+    this.props.dispatch(actionCreators.retainState());
+  }
   render() {
     return (
       <div className="App">
@@ -35,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);

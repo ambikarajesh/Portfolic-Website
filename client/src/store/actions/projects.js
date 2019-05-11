@@ -31,7 +31,6 @@ export const fetchProjects = () =>{
     return dispatch => {
         dispatch(fetchProjectStart());
         axios.get(`${SERVER}/projects`).then(res=> {
-            console.log(res)
             if(res.data.status === '00'){
                 dispatch(fetchProjectsSuccess(res.data.projects))
             }

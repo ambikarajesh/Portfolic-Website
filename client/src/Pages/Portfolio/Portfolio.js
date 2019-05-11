@@ -14,7 +14,6 @@ class Portfolio extends Component {
     }
     
     render() {
-        console.log(this.props.projects)
         const portfolioList = this.props.projects.length >=0 ? (<div className={styles.cards_wrapper}>
                                                                         {this.props.projects.map((project, index)=>{
                                                                             return <PortfolioCards image={project.image} title={project.title} languages={project.languages} link={project.link} key={index}/>

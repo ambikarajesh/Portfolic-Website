@@ -59,7 +59,8 @@ exports.postLogin = (req, res, next)=>{
                 }
                 res.cookie('auth', user.token).status(200).json({
                     status:'00',
-                    message:'Login successfully'
+                    message:'Login successfully',
+                    userId:user._id
                 })
             })
             
@@ -76,20 +77,20 @@ exports.postLogin = (req, res, next)=>{
 }
 
 
-exports.getAuth = (req, res, next) =>{
-    res.status(200).json({
-        status:'00',
-        message:"auth response",
-        user: req.user
-    })
-}
-
 exports.getLogout = (req, res, next) =>{
+    console.log("user=", req.user)
     User.findByIdAndUpdate({_id:req.user._id}, {token:""}).then(user=>{
         res.clearCookie('auth').status(200).json({
             status:'00',
             message:"Logout successfully"
         })
+    }).catch(err=>{
+        if(!err.statusCode){
+            err.status = '01';
+            err.message = 'Internal Server Error';
+            err.statusCode = 500;            
+        }    
+        next(err);
     })
     
 }
