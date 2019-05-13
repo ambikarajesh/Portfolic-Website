@@ -1,5 +1,6 @@
 export const SUBMIT_CONTACT = 'submit_contact';
-export const SUBMIT_PROJECT = 'submit_project';
+export const ADD_PROJECT = 'submit_project';
+export const DELETE_PROJECT = 'delete_proejct';
 export const FETCH_PROJECTS_START = 'fetch_project_start';
 export const FETCH_PROJECTS_SUCCESS = 'fetch_project_success';
 export const FETCH_PROJECTS_FAIL = 'fetch_project_fail';

@@ -1,6 +1,5 @@
 const User = require('../models/user');
 module.exports = (req, res, next) =>{
-    console.log('cookies=', req.cookies.auth)
     const token = req.cookies.auth;    
     User.verifyToken(token, (err,user)=>{
         if(!user){

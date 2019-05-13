@@ -88,7 +88,7 @@ class Login extends React.Component {
                 let submitData = generateData(this.state.inputs);
                 const validForm = validateForm(this.state.inputs);
                 const validImage = validateImage(this.state.image);
-                const project = {...submitData, image:url}
+                const project = {...submitData, imagePath:url, imageName:image.name}
                 if(validForm && validImage){   
                     this.props.dispatch(actionCreators.submitProject(project)).then(res=>{
                         if(res.payload.status === '00'){

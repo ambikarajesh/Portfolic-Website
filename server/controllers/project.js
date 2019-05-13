@@ -36,8 +36,31 @@ exports.getProjects = (req, res, next) => {
     }).catch(err=>{
         if(!err.statusCode){
             err.status = '01';
-            err.statusCode = 500;            
+            err.statusCode = 500;   
+            err.message = 'Internal Server Error';         
         }    
         next(err);
     })
+}
+
+exports.deleteProject = (req, res, next) => {
+    Project.findOneAndDelete({_id:req.params.id}).then(item=>{
+            if(!item){
+                const error = new Error("Project is not found for delete");
+                error.status = "01";
+                error.statusCode = 404;
+                throw error;
+            }
+            res.status(200).json({
+                status:'00',
+                message:"Deleted Product Successfully"
+            })
+        }).catch(err=>{
+            if(!err.statusCode){
+                err.status = '01';
+                err.statusCode = 500;         
+                err.message = 'Internal Server Error';   
+            }    
+            next(err);
+        })  
 }

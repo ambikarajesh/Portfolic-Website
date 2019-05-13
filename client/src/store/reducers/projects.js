@@ -4,7 +4,12 @@ const initialState = {
 }
 const reducer = (state=initialState, action) =>{
     switch(action.type){
-        case actionTypes.SUBMIT_PROJECT:
+        case actionTypes.ADD_PROJECT:
+        return {
+            ...state,
+            payload:action.payload
+        }
+        case actionTypes.DELETE_PROJECT:
         return {
             ...state,
             payload:action.payload

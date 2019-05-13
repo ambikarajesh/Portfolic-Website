@@ -5,7 +5,7 @@ export const submitProject = (project) => {
     
     const req = axios.post(`${SERVER}/projects/add_project`, project).then(res=> res.data).catch(err=> err.response.data);
     return {
-        type:actionTypes.SUBMIT_PROJECT,
+        type:actionTypes.ADD_PROJECT,
         payload:req
     }
 }
@@ -38,4 +38,13 @@ export const fetchProjects = () =>{
             dispatch(fetchProjectsFail());
         });
     }    
+}
+
+export const deleteProject = (projectId) => {
+    console.log(projectId)
+    const req = axios.delete(`${SERVER}/projects/delete_project/${projectId}`).then(res=> res.data).catch(err=> err.response.data);
+    return {
+        type:actionTypes.DELETE_PROJECT,
+        payload:req
+    }
 }

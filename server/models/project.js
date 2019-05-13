@@ -15,10 +15,14 @@ const projectSchma = new Schema({
         type:String,
         required:true, 
     },
-    image:{
+    imagePath:{
         type:String,
         required:true, 
-    }
+    },
+    imageName:{
+        type:String,
+        required:true, 
+    },
 }, {timestamps:true});
 module.exports = mongoose.model('Project', projectSchma);
 
