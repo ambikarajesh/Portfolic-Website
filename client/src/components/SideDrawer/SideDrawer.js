@@ -26,7 +26,6 @@ class SideDrawer extends React.Component{
 
     render(){
     const { classes } = this.props;
-    console.log(this.props.isAuth)
     return (                 
             <Drawer classes={{paper:classes.paper}} open={this.props.open} onClose={()=> this.props.onclose(false)}>
                 <AuthorImage height='100px' width='100px'/>

@@ -13,7 +13,6 @@ import * as actionCreators from './store/actions';
 import {connect} from 'react-redux';
 class App extends Component {
   componentDidMount(){
-    console.log('in')
     this.props.dispatch(actionCreators.retainState());
   }
   render() {

@@ -78,7 +78,6 @@ exports.postLogin = (req, res, next)=>{
 
 
 exports.getLogout = (req, res, next) =>{
-    console.log("user=", req.user)
     User.findByIdAndUpdate({_id:req.user._id}, {token:""}).then(user=>{
         res.clearCookie('auth').status(200).json({
             status:'00',

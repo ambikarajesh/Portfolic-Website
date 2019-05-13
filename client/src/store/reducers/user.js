@@ -8,20 +8,12 @@ const reducer = (state=initialState, action) =>{
         return {
             ...state,
             payload:action.payload
-        }       
-        case actionTypes.FETCH_USER_START:
-            return {
-                ...state,            
-            }
+        } 
         case actionTypes.FETCH_USER_SUCCESS:
             return {
                 ...state,
                 userId:action.userId
-            }        
-        case actionTypes.FETCH_USER_FAIL:
-            return {
-                ...state
-            }
+        }        
         case actionTypes.LOGOUT:
         return {
             ...state,
