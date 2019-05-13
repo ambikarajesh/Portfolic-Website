@@ -3,7 +3,12 @@ const initialState = {
     userId:null
 }
 const reducer = (state=initialState, action) =>{
-    switch(action.type){        
+    switch(action.type){ 
+        case actionTypes.FETCH_USER:
+        return {
+            ...state,
+            payload:action.payload
+        }       
         case actionTypes.FETCH_USER_START:
             return {
                 ...state,            

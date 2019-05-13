@@ -37,7 +37,7 @@ exports.postLogin = (req, res, next)=>{
     }
     User.findOne({email:req.body.email}).then(user=>{
         if(!user){
-            const error = new Error('Please, do registeration !!!');
+            const error = new Error('Invalid User!!!');
             error.status = '01';
             error.statusCode = 401;
             throw error;

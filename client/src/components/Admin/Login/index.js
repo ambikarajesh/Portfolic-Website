@@ -53,10 +53,20 @@ class Login extends React.Component {
     submitHandler = () => {
         const submitData = generateData(this.state.inputs);
         const validForm = validateForm(this.state.inputs);
-        if(validForm){                 
-            console.log(submitData);
-            this.props.dispatch(actionCreators.fetchUser(submitData));
-            this.handleClose();
+        if(validForm){  
+            this.props.dispatch(actionCreators.fetchUser(submitData)).then(res=>{
+                if(res.payload.status === '00'){
+                    this.setState({formValid:true, formSuccess:true, formValidErr:res.payload.message})
+                    setTimeout(()=>{                        
+                        this.handleClose();
+                        this.props.dispatch(actionCreators.setUserId(res.payload.userId));
+                    }, 3000)
+                }else{
+                    this.setState({formValid:false, formValidErr:res.payload.message})
+                } 
+            }).catch(err=>{                        
+                this.setState({formValid:false, formValidErr:'Invalid Inputs'})
+            })
         }else{
             this.setState({formValid:false, formValidErr:'Invalid Inputs'}) 
         }
