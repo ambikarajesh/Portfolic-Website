@@ -96,7 +96,7 @@ class ContactForm extends React.Component {
                         this.props.history.push('/')
                         const inputs = clearInputs(this.state.inputs)
                         this.setState({inputs:inputs, formValid:true, formSuccess:false, formValidErr:false})
-                    }, 3000)
+                    }, 500)
                 }else{
                     this.setState({formValid:false, formValidErr:res.payload.message})
                 }                

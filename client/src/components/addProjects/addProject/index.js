@@ -96,7 +96,7 @@ class Login extends React.Component {
                             setTimeout(()=>{
                                 this.props.dispatch(actionCreators.fetchProjects());
                                 this.handleClose();
-                            }, 1000)
+                            }, 500)
                         }else{
                             this.setState({formValid:false, formValidErr:res.payload.message})
                         } 

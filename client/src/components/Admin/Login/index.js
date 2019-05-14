@@ -60,7 +60,7 @@ class Login extends React.Component {
                     setTimeout(()=>{                        
                         this.handleClose();
                         this.props.dispatch(actionCreators.setUserId(res.payload.userId));
-                    }, 3000)
+                    }, 500)
                 }else{
                     this.setState({formValid:false, formValidErr:res.payload.message})
                 } 
