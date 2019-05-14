@@ -1,16 +1,15 @@
 import firebase from 'firebase/app';
 import 'firebase/storage';
-import * as keys from '../keys';
 var firebaseConfig = {
-    apiKey: keys.FIREBASE_APIKEY,
-    authDomain: keys.FIREBASE_AUTHDOMAIN,
-    databaseURL:keys.FIREBASE_DATABSEURL,
-    projectId: keys.FIREBASE_PROJECTID,
-    storageBucket: keys.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: keys.FIREBASE_MESSAGESENDERID,
-    appId: keys.FIREBASE_APPID
+    apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+    authDomain: process.env.REACT_APP_AUTHDOMAIN,
+    databaseURL:process.env.REACT_APP_FIREBASE_DATABSEURL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId:process.env.REACT_APP_FIREBASE_MESSAGESENDERID,
+    appId: process.env.REACT_APP_FIREBASE_APPID
   };
-  
+  console.log(process.env.REACT_APP_FIREBASE_APIKEY)
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 

@@ -41,7 +41,6 @@ export const fetchProjects = () =>{
 }
 
 export const deleteProject = (projectId) => {
-    console.log(projectId)
     const req = axios.delete(`${SERVER}/projects/delete_project/${projectId}`).then(res=> res.data).catch(err=> err.response.data);
     return {
         type:actionTypes.DELETE_PROJECT,
