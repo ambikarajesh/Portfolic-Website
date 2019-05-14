@@ -14,9 +14,7 @@ const mongoDB_URI = `mongodb+srv://${process.env.USER}:${process.env.PWD}@cluste
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.get('/', (req, res, next)=>{
-    res.status(200).json({project:portfolio})
-})
+
 app.use('/api', contactRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/admin', authRoutes);
