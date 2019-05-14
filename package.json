@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Showcase about my skills in node and react",
   "engines":{
-    "node":"10.15.3",
-    "npm":"6.4.1"
+    "node":"v10.15.3"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
