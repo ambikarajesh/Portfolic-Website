@@ -6,7 +6,7 @@ const contactRoutes = require('./server/routes/contact');
 const projectRoutes = require('./server/routes/project');
 const authRoutes = require('./server/routes/user');
 const cookieParser = require('cookie-parser');
-
+const compression = require('compression');
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -15,7 +15,7 @@ const mongoDB_URI = `mongodb+srv://${process.env.USER}:${process.env.PWD}@cluste
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-
+app.use(compression());
 app.use('/api', contactRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/admin', authRoutes);
