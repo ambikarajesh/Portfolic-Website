@@ -15,7 +15,9 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-
+app.get('/', (req, res, next)=>{
+    res.json({project:portfolio})
+})
 app.use('/api', contactRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/admin', authRoutes);
