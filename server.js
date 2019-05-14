@@ -14,7 +14,7 @@ const mongoDB_URI = `mongodb+srv://${process.env.USER}:${process.env.PWD}@cluste
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-
+app.use(express.static('client/build'));
 app.use('/api', contactRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/admin', authRoutes);
@@ -24,8 +24,17 @@ app.use((error, req, res, next)=>{
         message:error.message,
     })
 })
+
+if(process.env.NODE_ENV === 'production'){
+    const path = require('path');
+    app.get('/*', (req, res)=>{
+        res.sendFile(path.resolve(__dirname, './client', 'build', 'index.html'))
+    })
+}
 mongoose.connect(encodeURI(mongoDB_URI)).then(result=>{
     app.listen(PORT, () => {
         console.log(`Server start at ${PORT}`);
     })
 }).catch(err =>console.log(err))
+
+
