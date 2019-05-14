@@ -11,10 +11,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8080;
 const mongoDB_URI = `mongodb+srv://${process.env.USER}:${process.env.PWD}@cluster0-btzl5.mongodb.net/${process.env.DATABASE}`;
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(express.static('client/build'));
+
 app.use('/api', contactRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/admin', authRoutes);
@@ -25,12 +26,6 @@ app.use((error, req, res, next)=>{
     })
 })
 
-if(process.env.NODE_ENV === 'production'){
-    const path = require('path');
-    app.get('/*', (req, res)=>{
-        res.sendFile(path.resolve(__dirname, './client', 'build', 'index.html'))
-    })
-}
 mongoose.connect(encodeURI(mongoDB_URI)).then(result=>{
     app.listen(PORT, () => {
         console.log(`Server start at ${PORT}`);
