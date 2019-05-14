@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 dotenv.config();
 const app = express();
 const mongoDB_URI = `mongodb+srv://${process.env.USER}:${process.env.PWD}@cluster0-btzl5.mongodb.net/${process.env.DATABASE}`;
-
+app.use(express.static(path.join(__dirname)));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
