@@ -2,6 +2,9 @@
   "name": "portfolic-website",
   "version": "1.0.0",
   "description": "Showcase about my skills in node and react",
+  "engines":{
+    "node":"10.15.3"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,9 +12,6 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "engines":{
-    "node":"10.15.3"
   },
   "repository": {
     "type": "git",
