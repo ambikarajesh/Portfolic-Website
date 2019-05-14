@@ -29,5 +29,5 @@ app.use((error, req, res, next)=>{
 mongoose.connect(encodeURI(mongoDB_URI)).then(result=>{
     app.listen(PORT, () => {
         console.log(`Server start at ${PORT}`);
-    }).catch(err =>console.log(err))
-})
+    })
+}).catch(err =>console.log(err))
