@@ -6,7 +6,7 @@ const contactRoutes = require('./server/routes/contact');
 const projectRoutes = require('./server/routes/project');
 const authRoutes = require('./server/routes/user');
 const cookieParser = require('cookie-parser');
-
+const path = require('path');
 dotenv.config();
 const app = express();
 const mongoDB_URI = `mongodb+srv://${process.env.USER}:${process.env.PWD}@cluster0-btzl5.mongodb.net/${process.env.DATABASE}`;
