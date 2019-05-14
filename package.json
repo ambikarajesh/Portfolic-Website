@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Showcase about my skills in node and react",
   "engines":{
-    "node":"10.15.3"
+    "node":"10.15.3",
+    "npm":"6.4.1"
   },
   "main": "index.js",
   "scripts": {

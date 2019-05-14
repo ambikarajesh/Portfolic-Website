@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.get('/', (req, res, next)=>{
-    res.json({project:portfolio})
+    res.status(200).json({project:portfolio})
 })
 app.use('/api', contactRoutes);
 app.use('/api/projects', projectRoutes);
@@ -27,7 +27,7 @@ app.use((error, req, res, next)=>{
     })
 })
 mongoose.connect(encodeURI(mongoDB_URI)).then(result=>{
-    app.listen(process.env.PORT || 5000, () => {
+    app.listen(process.env.PORT || 8000, () => {
         console.log(`Server start at ${PORT}`);
     })
 })
