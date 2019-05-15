@@ -11,7 +11,7 @@ const path = require('path');
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8080;
-const mongoDB_URI = `mongodb+srv://${process.env.USER}:${process.env.PWD}@cluster0-btzl5.mongodb.net/${process.env.DATABASE}`;
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -34,7 +34,7 @@ app.use((error, req, res, next)=>{
     })
 })
 
-mongoose.connect(encodeURI(mongoDB_URI)).then(result=>{
+mongoose.connect(encodeURI(process.env.MONGODB_URI)).then(result=>{
     app.listen(PORT, () => {
         console.log(`Server start at ${PORT}`);
     })
