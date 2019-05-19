@@ -9,7 +9,6 @@ var firebaseConfig = {
     messagingSenderId:process.env.REACT_APP_FIREBASE_MESSAGESENDERID,
     appId: process.env.REACT_APP_FIREBASE_APPID
   };
-  console.log(process.env.REACT_APP_FIREBASE_APIKEY)
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 

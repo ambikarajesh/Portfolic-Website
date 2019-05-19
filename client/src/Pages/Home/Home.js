@@ -5,7 +5,7 @@ import styles from './Home.module.css';
 import AuthorImage from '../../components/Author/Author';
 import SocialMediaIcons from '../../components/SocialMediaIcon/SocialMediaIcon';
 import Zoom from 'react-reveal/Zoom';
-import {MDBBtn} from 'mdbreact'
+import Resume from '../../components/Resume';
 class Home extends Component {
     render() {
         return (
@@ -17,7 +17,7 @@ class Home extends Component {
                         <p>Hello, I am <span>Ambika Kulanthasamy</span> and</p>
                         <h3>I AM A FULL-STACK <span>Node JS | React JS </span>DEVELOPER</h3>
                         <SocialMediaIcons sidebar={false}/>
-                        <MDBBtn style={{backgroundColor:'#43DDE0', margin:'20px'}}>My Resume</MDBBtn>
+                        <Resume/>
                     </div>  
                 </Zoom>                         
             </div>

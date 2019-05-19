@@ -36,7 +36,6 @@ class MediaCard extends React.Component {
     }
     render(){
       const { classes } = this.props;
-      console.log(this.props)
         return (           
             <div  className={style.cards}>
             <Zoom duration={2000}>
