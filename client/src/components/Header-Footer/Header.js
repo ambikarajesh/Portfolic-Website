@@ -38,14 +38,14 @@ class Header extends Component {
     ToggleButton = (value) => {
         this.setState({showSidebar:value});
     }
-    handleScroll = () => {
+    handleScroll = () => {        
         if(window.scrollY>0 && window.scrollY<=300){
             this.setState({showHeader:true, active:"home"});
         }
-        else if(window.scrollY>400 && window.scrollY<1200){
+        else if(window.scrollY>400 && window.scrollY<900){
             this.setState({showHeader:true, active:"work"});
         }
-        else if(window.scrollY>=1200 && window.scrollY<1600){
+        else if(window.scrollY>=900 && window.scrollY<1200){
             this.setState({showHeader:true, active:"portfolio"});
         }
         else if(window.scrollY>=1600 && window.scrollY<2500){
