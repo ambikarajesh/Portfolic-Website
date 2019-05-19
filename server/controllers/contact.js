@@ -7,6 +7,8 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 // Use Smtp Protocol to send Email
 var transporter = mailer.createTransport({
     service: 'gmail',
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.GUSERID,
       pass: process.env.GPWD
