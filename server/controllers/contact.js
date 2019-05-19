@@ -27,12 +27,11 @@ exports.postContact = (req, res, next) => {
     const contact = new Contact(req.body);
     contact.save().then(result=>{
         var mailOptions = {
-            from: `${req.body.name} <${req.body.email}>`,
+            from: `${req.body.email}`,
             to: 'ambikula@gmail.com',
             subject: req.body.subject,
-            text: req.body.message
+            text: `${req.body.name}  ${req.body.email}  ${req.body.message}`,
           };
-          
           transporter.sendMail(mailOptions, function(error, info){
             if (error) {
               console.log(error);
