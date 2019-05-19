@@ -30,7 +30,7 @@ exports.postContact = (req, res, next) => {
             from: `${req.body.email}`,
             to: 'ambikula@gmail.com',
             subject: req.body.subject,
-            text: ` Name: ${req.body.name}, \n Email:${req.body.email}, \n Content:${req.body.message}`,
+            text: `${req.body.name}, ${req.body.email}, ${req.body.message}`,
           };
           transporter.sendMail(mailOptions, function(error, info){
             if (error) {
