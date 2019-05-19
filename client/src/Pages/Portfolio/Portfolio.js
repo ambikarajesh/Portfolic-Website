@@ -21,7 +21,6 @@ class Portfolio extends Component {
                                                                         })}
                                                                         
                                                                 </div>) : null;
-                                                                console.log(this.props.projects)
         return (
             <div className={styles.Portfolio} style={{backgroundImage:`linear-gradient(rgba(20, 41, 51 ,0.8), rgba(8, 20, 26 ,1)), url(${backImage})`}}>
                <Title title='Portfolio'/>
